@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    tty: true
+    volumes: 
+        - .pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: morsechallenger
+    ports:
+        - "5432:5432"
